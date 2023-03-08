@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    background: #e3edf7 ;
+}
+.accordion{
+    margin: 60px auto;
+    width: 600px;
+}
+.accordion li{
+    list-style-type: none;
+    width: 100%;
+    margin: 20px auto;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+                -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+}
+/* #one{
+    background: #5DCFCB;
+}
+#two{
+    background: #618FC7;
+}
+#three{
+    background: #81BF5A;
+}
+#four{
+    background: #E3E175;
+}
+#five{
+    background: #D15280;
+} */
+.accordion li label {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+}
+label::before{
+    content: '+';
+    margin-right: 10px;
+    font-size: 24px;
+    font-weight: 600;
+}
+.accordion input[type="checkbox"]{
+    display: none;
+}
+.accordion .content{
+    color: #555;
+    padding: 4px 10px;
+    line-height: 26px;
+    text-align: justify;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s, padding 0.5s;
+}
+.accordion input[type="checkbox"]:checked +label + .content{
+    max-height: 400px;
+    padding: 10px 10px 20px;
+}
+.accordion input[type="checkbox"]:checked +label::before {
+content: '-';
+}
+
+/* Meida queries */
+.accordion {
+    width: 600px; /* default width */
+    }
+    
+    @media only screen and (max-width: 767px) {
+      .accordion {
+        width: 90%; /* width for small screens */
+      }
+    }
+    
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
+      .accordion {
+        width: 80%; /* width for medium screens */
+      }
+    }
+    
+    @media only screen and (min-width: 992px) {
+      .accordion {
+        width: 600px; /* width for large screens */
+      }
+    }
+    
